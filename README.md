@@ -6,10 +6,12 @@
 # git clone https://github.com/locutus666/ingress-nginx.git
 ```
 
-- 在选取的ingress-nginx节点，加载ingres-nginx镜像
+- 在选取的ingress-nginx节点，下载ingres-nginx镜像
 
 ```bash
-# docker load -i ingress-controller.tar
+# docker pull locutus1/ingress-nginx:v0.34.1
+
+# docker tag locutus1/ingress-nginx:v0.34.1 k8s.gcr.io/k8s-artifacts-prod/ingress-nginx/controller:v0.34.1
 ```
 
 - 给选取的ingress-nginx节点打标签
@@ -25,8 +27,6 @@
 - 部署yaml文件
 
 ```bash
-# cd ingress-nginx-0.34.1/
-
 # kubectl apply -f .
 ```
 
